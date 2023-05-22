@@ -21,4 +21,10 @@ class Cursos extends Conexion{
         $this->curso_instructor = $args['curso_instructor'] ?? '';
         $this->curso_creditos = $args['curso_creditos'] ?? '';
     }
+
+    public function guardar(){
+        $sql = "INSERT INTO cursos(curso_nombre, curso_periodos, curso_fase, curso_instructor, curso_creditos) values('$this->curso_nombre','$this->curso_periodos','$this->curso_fase','$this->curso_instructor','$this->curso_creditos')";
+        $resultado = self::ejecutar($sql);
+        return $resultado;
+    }
 }
