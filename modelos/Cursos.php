@@ -11,4 +11,14 @@ class Cursos extends Conexion{
     public $curso_fase;
     public $curso_instructor;
     public $curso_creditos;
+
+    public function __construct($args = [] )
+    {
+        $this->curso_id = $args['id'] ?? null;
+        $this->curso_nombre = $args['curso_nombre'] ?? '';
+        $this->curso_periodos = $args['curso_periodos'] ?? '';
+        $this->curso_fase = $args['curso_fase'] ?? '';
+        $this->curso_instructor = $args['curso_instructor'] ?? '';
+        $this->curso_creditos = $args['curso_creditos'] ?? '';
+    }
 }
